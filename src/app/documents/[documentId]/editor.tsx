@@ -4,6 +4,7 @@ import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { TextStyle, FontFamily, Color } from '@tiptap/extension-text-style'
 import Highlight from '@tiptap/extension-highlight'
+import TextAlign from '@tiptap/extension-text-align'
 import { TaskItem, TaskList } from '@tiptap/extension-list'
 import Link from '@tiptap/extension-link'
 import { TableKit } from '@tiptap/extension-table'
@@ -48,6 +49,9 @@ const Editor = () => {
         },
         extensions: [
             Color,
+            TextAlign.configure({
+                types: ['heading', 'paragraph'],
+            }),
             Link.configure({
                 openOnClick: false,
                 autolink: true,
